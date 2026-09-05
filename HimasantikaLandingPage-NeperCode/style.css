@@ -1,34 +1,21 @@
-/* ============================================
-   Himasantika Landing Page — Stylesheet
-   Palet: Navy + Rust Red (sesuai palette resmi Himasantika dari Drive)
-   - Navy #101869 (primary)
-   - Rust Red #C3503B (accent)
-   - Off-White #F9F9FB (background)
-   - Charcoal #1A1A24 (text)
-   ============================================ */
-
-/* ===== Variables ===== */
 :root {
-  /* Palette resmi Himasantika (dari color palette PNG di Google Drive) */
-  --primary:        #101869;  /* Navy Blue */
+  --primary:        #101869;
   --primary-dark:   #0a0f4a;
   --primary-light:  #1f2a8a;
-  --accent:         #C3503B;  /* Rust Red / Terracotta */
+  --accent:         #C3503B;
   --accent-dark:    #a13f2f;
   --accent-light:   #d66b56;
-  --bg:             #F9F9FB;  /* Off-White */
-  --surface:        #F0F0F4;  /* Light surface (sedikit lebih gelap dari bg) */
-  --text:           #1A1A24;  /* Charcoal Black */
+  --bg:             #F9F9FB;
+  --surface:        #F0F0F4;
+  --text:           #1A1A24;
   --text-muted:     #5A5A6E;
   --border:         #E0E0E8;
   --border-soft:    #ECECF0;
   --black:          #000000;
 
-  /* Typography */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
 
-  /* Radius */
   --r-sm: 8px;
   --r-md: 12px;
   --r-lg: 16px;
@@ -36,7 +23,6 @@
   --r-full: 9999px;
 }
 
-/* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body {
@@ -51,7 +37,6 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 ul, ol { list-style: none; }
 img, svg { display: block; max-width: 100%; }
 
-/* ===== Layout ===== */
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 @media (min-width: 640px)  { .container { padding: 0 32px; } }
 
@@ -68,7 +53,6 @@ img, svg { display: block; max-width: 100%; }
 .section-head p { color: var(--text-muted); max-width: 640px; margin: 0 auto; }
 .section-head--left p { margin: 0; }
 
-/* ===== Buttons ===== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 12px 24px;
@@ -96,7 +80,6 @@ img, svg { display: block; max-width: 100%; }
 .btn--lg { padding: 16px 32px; font-size: 15px; }
 .btn--block { width: 100%; }
 
-/* ===== Eyebrow ===== */
 .eyebrow {
   font-size: 12px; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase;
@@ -108,7 +91,6 @@ img, svg { display: block; max-width: 100%; }
   color: var(--accent);
 }
 
-/* ===== Header ===== */
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   height: 72px;
@@ -181,7 +163,6 @@ img, svg { display: block; max-width: 100%; }
   align-items: stretch;
 }
 
-/* ===== Hero ===== */
 .hero {
   position: relative;
   background: var(--primary);
@@ -245,7 +226,6 @@ img, svg { display: block; max-width: 100%; }
 .hero__copy p { text-align: left; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 12px; }
 
-/* ===== About ===== */
 .about { padding: 80px 0; background: var(--bg); }
 .about__inner { max-width: 1000px; margin: 0 auto; }
 .about__heading {
@@ -298,7 +278,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .about__vision strong { color: var(--primary); }
 
-/* ===== BPH (Badan Pengurus Harian) ===== */
 .bph { padding: 80px 0; background: var(--bg); }
 .bph__layout {
   display: grid; gap: 40px;
@@ -308,7 +287,6 @@ img, svg { display: block; max-width: 100%; }
   .bph__layout { grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
 }
 
-/* Foto Photoshoot Struktur sebagai visual */
 .bph__photo {
   position: relative;
   border-radius: var(--r-xl);
@@ -342,7 +320,6 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1;
 }
 
-/* 6 kartu posisi BPH */
 .bph__list {
   display: grid; gap: 16px;
   grid-template-columns: 1fr;
@@ -413,7 +390,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .bph-card:hover .bph-card__view { color: var(--accent-dark); }
 
-/* ===== Divisi (Products) ===== */
 .divisi { padding: 80px 0; background: var(--surface); }
 .divisi-tabs {
   display: flex; flex-wrap: wrap; gap: 8px;
@@ -490,7 +466,6 @@ img, svg { display: block; max-width: 100%; }
   color: var(--accent-dark);
 }
 
-/* ===== Modal Divisi (popup staff flowchart) ===== */
 .modal {
   position: fixed; inset: 0; z-index: 200;
   display: none;
@@ -534,7 +509,6 @@ img, svg { display: block; max-width: 100%; }
   border-color: var(--accent);
 }
 
-/* Flowchart content */
 .modal-content__eyebrow {
   font-size: 11px; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase;
@@ -552,7 +526,6 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: 28px;
 }
 
-/* BPH modal description */
 .bph-modal-desc {
   display: flex; gap: 16px; align-items: flex-start;
   background: var(--surface);
@@ -576,7 +549,6 @@ img, svg { display: block; max-width: 100%; }
   margin: 0;
 }
 
-/* Flowchart layout */
 .flowchart {
   display: flex; flex-direction: column; align-items: center;
 }
@@ -647,7 +619,6 @@ img, svg { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 
-/* ===== Kegiatan (Blog) ===== */
 .kegiatan { padding: 80px 0; background: var(--bg); }
 .kegiatan-grid {
   display: grid; gap: 24px;
@@ -693,7 +664,6 @@ img, svg { display: block; max-width: 100%; }
 }
 .kegiatan-card__body p { font-size: 14px; color: var(--text-muted); }
 
-/* ===== Tujuan & Fungsi ===== */
 .tujuan { padding: 80px 0; background: var(--surface); }
 .tujuan__grid {
   display: grid; gap: 24px;
@@ -779,7 +749,6 @@ img, svg { display: block; max-width: 100%; }
   transform: rotate(-45deg);
 }
 
-/* Stats strip */
 .tujuan__extra {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 24px;
@@ -814,7 +783,6 @@ img, svg { display: block; max-width: 100%; }
 }
 @media (max-width: 640px) { .tujuan__extra-divider { display: none; } }
 
-/* ===== Kontak / Lead Gen ===== */
 .kontak { padding: 80px 0; background: var(--bg); }
 .kontak__inner {
   display: grid; gap: 40px;
@@ -869,7 +837,6 @@ img, svg { display: block; max-width: 100%; }
   box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
 }
 
-/* ===== Join (Bergabung — gabungan CTA + benefits) ===== */
 .join { padding: 80px 0; background: var(--surface); }
 .join__inner {
   display: grid; gap: 40px;
@@ -887,7 +854,6 @@ img, svg { display: block; max-width: 100%; }
 @media (min-width: 640px) { .join__text h2 { font-size: 40px; } }
 .join__text p { color: var(--text-muted); font-size: 15px; }
 
-/* Bullet benefits dengan icon check */
 .join__benefits {
   display: flex; flex-direction: column; gap: 12px;
   margin-top: 20px;
@@ -907,7 +873,6 @@ img, svg { display: block; max-width: 100%; }
   box-sizing: content-box;
 }
 
-/* Action side — tombol + catatan kecil */
 .join__action {
   background: #fff;
   border: 1px solid var(--border);
@@ -922,7 +887,6 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text-muted);
 }
 
-/* ===== Footer ===== */
 .footer { background: var(--primary); color: #cbd5e1; }
 .footer__inner {
   display: grid; gap: 40px;
@@ -986,7 +950,6 @@ img, svg { display: block; max-width: 100%; }
 .footer__legal a:hover { color: var(--accent); }
 .footer__legal span { color: #475569; }
 
-/* ===== Toast ===== */
 .toast {
   position: fixed;
   bottom: 24px; right: 24px;
