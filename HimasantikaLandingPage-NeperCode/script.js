@@ -1,14 +1,6 @@
-/* ============================================
-   Himasantika Landing Page — JavaScript
-   Interaksi: navbar scroll, mobile menu,
-              divisi filter tabs, divisi modal popup,
-              contact form + toast
-   ============================================ */
-
 (function () {
   "use strict";
 
-  /* ===== 1. Header scroll state ===== */
   const header = document.getElementById("header");
   const onScroll = () => {
     if (window.scrollY > 24) header.classList.add("scrolled");
@@ -17,7 +9,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ===== 2. Mobile hamburger menu ===== */
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("nav");
 
@@ -37,7 +28,6 @@
     });
   });
 
-  /* ===== 3. Divisi filter tabs ===== */
   const tabs = document.querySelectorAll(".divisi-tab");
   const cards = document.querySelectorAll(".divisi-card");
 
@@ -52,7 +42,6 @@
     });
   });
 
-  /* ===== 4. Modal popup (BPH tugas + Divisi staff flowchart) ===== */
   const modal = document.getElementById("divisiModal");
   const modalContent = document.getElementById("modalContent");
 
@@ -63,7 +52,6 @@
   const renderStaffList = (list) =>
     list.map((name) => `<li>${escapeHtml(name)}</li>`).join("");
 
-  /* Render untuk modal BPH (single content: jabatan + nama + deskripsi) */
   const renderBphContent = (jabatan, nama, desc) => `
     <span class="modal-content__eyebrow">Tugas Jabatan</span>
     <h2 class="modal-content__title" id="modalTitle">${escapeHtml(jabatan)}</h2>
@@ -76,7 +64,6 @@
     </div>
   `;
 
-  /* Render untuk modal Divisi (flowchart staff) */
   const renderDivisiContent = (name, staffData) => {
     let data;
     try {
@@ -137,7 +124,6 @@
     });
   });
 
-  /* Handler untuk Divisi cards */
   cards.forEach((card) => {
     card.addEventListener("click", (e) => {
       if (e.target.closest("a, button")) return;
@@ -147,7 +133,6 @@
     });
   });
 
-  /* Close modal: klik backdrop / tombol close / tombol ESC */
   modal.querySelectorAll("[data-close]").forEach((el) => {
     el.addEventListener("click", closeModal);
   });
@@ -155,7 +140,6 @@
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
   });
 
-  /* ===== 5. Contact form + toast ===== */
   const form = document.getElementById("contactForm");
   const toast = document.getElementById("toast");
   const toastTitle = document.getElementById("toastTitle");
@@ -184,6 +168,5 @@
     form.reset();
   });
 
-  /* ===== 6. Footer year ===== */
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
